@@ -1,6 +1,8 @@
 GIT:
-ng build --configuration production --base-href https://anilmj7.github.io/kpjgraniteexports/
-angular-cli-ghpages -d dist/kpj-granite/ --no-silent
+ng add angular-cli-ghpages
+
+ng build --configuration production --base-href https://anilmj7.github.io/funGame/
+angular-cli-ghpages -d dist --no-silent
 
 
 firebase:
