@@ -5,7 +5,11 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { User } from '@app/_models';
 
-const users: User[] = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
+const users: User[] = [
+    { id: 1, username: 'admin', password: 'admin', firstName: 'Administrator', lastName: 'user' },
+    { id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'user' },
+    { id: 1, username: 'anil', password: 'anil', firstName: 'Anil', lastName: 'Kumar' }
+];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -63,7 +67,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function isLoggedIn() {
-            return headers.get('Authorization') === `Basic ${window.btoa('test:test')}`;
+            return headers.get('Authorization') === `Basic ${window.btoa('admin:admin')}`;
         }
     }
 }
